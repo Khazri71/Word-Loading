@@ -1,0 +1,52 @@
+/*Font*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&family=Roboto:wght@300;400&display=swap");
+
+/*Variables*/
+:root {
+  --main-color-one: #000;
+  --main-color-two: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-color-one);
+  font-family: "Manrope", sans-serif;
+}
+
+.word-loading {
+  width: 265px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--main-color-two);
+  /*color: red;*/
+}
+.word-loading span {
+  font-size: 55px;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+}
+
+.word-loading::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 70px;
+  background-color: var(--main-color-two);
+  z-index: -1;
+  animation: go-back 3s linear infinite;
+}
+
+/*Animation*/
+@keyframes go-back {
+  0%,
+  100% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 50px);
+  }
+}
